@@ -1,0 +1,11 @@
+# Private reference photos and videos (contain location data)
+reference/
+
+# Editor and OS files
+.vs/
+.vscode/
+*.suo
+*.user
+Thumbs.db
+desktop.ini
+.DS_Store

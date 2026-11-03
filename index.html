@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dog's Room</title>
+  <meta name="description" content="A cozy lofi pixel room starring Dog, Keeper of the Mantle.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="stage">
+    <header class="top">
+      <h1>Dog's Room</h1>
+      <p class="sub">A lofi evening with the Keeper of the Mantle</p>
+    </header>
+
+    <div class="screen-frame">
+      <canvas id="room" class="screen" width="320" height="180" role="img"
+        aria-label="A cozy pixel art living room at dusk. Rain falls past the window, a lamp glows, music lights play on the TV, and Dog, a fluffy cream and brown cat with folded ears, wanders, naps and watches.">
+        Dog's Room needs a browser with canvas support.
+      </canvas>
+      <div class="grain" aria-hidden="true"></div>
+      <div class="scanlines" aria-hidden="true"></div>
+      <div class="vignette" aria-hidden="true"></div>
+    </div>
+
+    <p id="caption" class="caption" aria-live="polite" aria-atomic="true"></p>
+    <p class="hint">Milestone 1: sit back and watch her. Toys, the cushion and the laptop arrive next.</p>
+  </main>
+
+  <noscript><p class="hint">Dog's Room needs JavaScript. Everything runs locally; nothing is sent anywhere.</p></noscript>
+
+  <script src="js/room.js" defer></script>
+  <script src="js/dog.js" defer></script>
+  <script src="js/game.js" defer></script>
+</body>
+</html>
