@@ -5,13 +5,14 @@
 // one step; when the queue runs out she picks her next idea. No stacked timers.
 
 (function () {
-  var W = Room.W, H = Room.H;
+  var W = Room.W, H = Room.H, S = Room.S;
   var FLOOR = 160;
   var SEAT = 121;
 
   var canvas = document.getElementById('room');
+  canvas.width = W * S;
+  canvas.height = H * S;
   var ctx = canvas.getContext('2d');
-  ctx.imageSmoothingEnabled = false;
   var captionEl = document.getElementById('caption');
 
   var motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -27,9 +28,11 @@
   };
 
   var background = document.createElement('canvas');
-  background.width = W;
-  background.height = H;
-  Room.drawStatic(background.getContext('2d'));
+  background.width = W * S;
+  background.height = H * S;
+  var bctx = background.getContext('2d');
+  bctx.setTransform(S, 0, 0, S, 0, 0);
+  Room.drawStatic(bctx);
 
   // ---------- Helpers ----------
 
@@ -196,12 +199,11 @@
 
   var zs = [];
   var zTimer = 0;
-  var Z = ['111', '.1.', '111'];
   function updateZs(dt) {
     if (dog.pose === 'curl') {
       zTimer -= dt;
       if (zTimer <= 0) {
-        zs.push({ x: dog.x + dog.dir * 6, y: dog.y - 14, life: 2.4 });
+        zs.push({ x: dog.x + dog.dir * 8, y: dog.y - 18, life: 2.4 });
         zTimer = 1.6;
       }
     }
@@ -213,13 +215,21 @@
     }
   }
   function drawZs(c) {
+    c.font = 'bold 5px "Segoe UI", "Trebuchet MS", sans-serif';
+    c.lineWidth = 0.5;
+    c.lineJoin = 'round';
     for (var i = 0; i < zs.length; i++) {
-      c.fillStyle = 'rgba(250,244,230,' + Math.min(1, zs[i].life).toFixed(2) + ')';
-      for (var y = 0; y < 3; y++) {
-        for (var x = 0; x < 3; x++) {
-          if (Z[y][x] === '1') c.fillRect(Math.round(zs[i].x) + x, Math.round(zs[i].y) + y, 1, 1);
-        }
-      }
+      var a = Math.min(1, zs[i].life);
+      var size = 0.8 + (2.4 - zs[i].life) * 0.25;
+      c.save();
+      c.globalAlpha = a;
+      c.translate(zs[i].x, zs[i].y);
+      c.scale(size, size);
+      c.strokeStyle = '#6b4a3a';
+      c.fillStyle = '#fff6e6';
+      c.strokeText('z', 0, 0);
+      c.fillText('z', 0, 0);
+      c.restore();
     }
   }
 
@@ -234,9 +244,10 @@
     update(dt);
     updateZs(dt);
 
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.drawImage(background, 0, 0);
+    ctx.setTransform(S, 0, 0, S, 0, 0);
     Room.drawDynamic(ctx, t, { images: images, reduced: reduced, laptopTyping: false });
-    Room.drawShade(ctx);
     DogSprite.draw(ctx, dog, t);
     Room.drawLighting(ctx, t, { reduced: reduced });
     drawZs(ctx);
