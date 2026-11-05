@@ -31,7 +31,7 @@
   var T = {
     observe: ['Dog is regally observing her kingdom.', 'Dog surveys the room. Everything is in order.', 'Quietly. Majestically. Watching.'],
     loaf: ['Dog has become a loaf.', 'A perfect loaf. Ten out of ten.'],
-    nap: ['Nap time. Do not disturb the Keeper.', 'Dog curls up for a well-earned nap.'],
+    nap: ['Nap time. Do not disturb.', 'Dog curls up for a well-earned nap.'],
     wake: ['A big stretch. Nap complete.', 'She wakes and stretches every inch.'],
     tv: ['Dog is watching the singer and the lights.', 'Front row seat for the oud.', 'She is enjoying the show.'],
     toWater: ['Time for a drink.'],
@@ -76,7 +76,7 @@
     pet: ['Purrrrr...', 'She leans into the pets. Purring.', 'Soft purrs and slow blinks.'],
     petSleep: ['She opens one eye, slow blinks, and goes back to sleep.'],
     swat: ['One pet too many. Swat!'],
-    swatAfter: ['She needs a minute. Respect the Keeper.']
+    swatAfter: ['She needs a minute. Respect her space.']
   };
 
   var lastCaption = '';

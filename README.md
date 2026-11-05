@@ -1,6 +1,6 @@
 # Dog's Room
 
-A cozy, hand-painted living room starring Dog, Keeper of the Mantle: a fluffy cream and seal-brown Himalayan / Scottish Fold with folded ears, blue eyes and very strong opinions.
+A cozy, hand-painted living room starring Dog: a fluffy cream and seal-brown Himalayan / Scottish Fold with folded ears, blue eyes and very strong opinions.
 
 It's a sunny afternoon. The TV is playing a singer with an oud, and Dog lives her life: she observes regally, loafs, naps in her playpen, kneads the sofa blanket, watches TV, drinks her water, climbs the cat tree, races up the dining chair, claims the roof of her blue cube house and, now and then, gets the zoomies.
 
