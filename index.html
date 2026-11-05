@@ -10,26 +10,42 @@
 <body>
   <main class="stage">
     <header class="top">
-      <h1>Dog's <span>Room</span></h1>
-      <p class="sub">A sunny afternoon with the Keeper of the Mantle</p>
+      <div>
+        <h1>Dog's <span>Room</span></h1>
+        <p class="sub">A sunny afternoon with the Keeper of the Mantle</p>
+      </div>
+      <button id="music" class="music" type="button" aria-pressed="false">Music: off</button>
     </header>
 
     <div class="screen-frame">
-      <canvas id="room" class="screen" width="1600" height="900" role="img"
-        aria-label="A cozy hand-painted living room on a sunny afternoon. Clouds drift past the window, curtains sway in the breeze, sunbeams light the floor, and Dog, a fluffy cream and brown cat with folded ears and big blue eyes, wanders, naps and watches the lights on the TV.">
+      <canvas id="room" class="screen" width="1920" height="1072" role="img"
+        aria-label="A hand-painted living room on a sunny afternoon, with a cat tree by the big garden window, a red playpen, a navy sofa with soft blankets, a coffee table with a laptop and a rainbow runner, a TV showing a singer with an oud, and a blue cube cat house. Dog, a fluffy cream and seal-brown cat with folded ears and blue eyes, lives her life here.">
         Dog's Room needs a browser with canvas support.
       </canvas>
+      <div id="hotspots" class="hotspots"></div>
       <div class="paper" aria-hidden="true"></div>
-      <div class="vignette" aria-hidden="true"></div>
     </div>
 
     <p id="caption" class="caption" aria-live="polite" aria-atomic="true"></p>
-    <p class="hint">Milestone 1: sit back and watch her. Toys, the cushion and the laptop arrive next.</p>
+
+    <section class="toys" aria-label="Play with Dog">
+      <button type="button" data-action="pet">Pet Dog</button>
+      <button type="button" data-action="sparkle">Sparkle ball</button>
+      <button type="button" data-action="mouse">Dangling mouse</button>
+      <button type="button" data-action="snake">Rainbow snake</button>
+      <button type="button" data-action="ribbon">Ribbon wand</button>
+      <button type="button" data-action="bows">Present bows</button>
+      <button type="button" data-action="bag">Paper bag</button>
+      <button type="button" data-action="box">Cardboard box</button>
+      <button type="button" data-action="dinner">Dinner time</button>
+    </section>
+
+    <p class="hint">Click things in the room too: the cat tree, her playpen, the sofa blanket, the laptop, the TV, her blue cube and the dining chair. Click Dog to pet her, but not too much.</p>
   </main>
 
   <noscript><p class="hint">Dog's Room needs JavaScript. Everything runs locally; nothing is sent anywhere.</p></noscript>
 
-  <script src="js/room.js" defer></script>
+  <script src="js/scene.js" defer></script>
   <script src="js/dog.js" defer></script>
   <script src="js/game.js" defer></script>
 </body>
