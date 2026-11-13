@@ -3,19 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dog's Room</title>
+  <meta name="color-scheme" content="light dark">
+  <title>Dog's Room | catnamed.dog</title>
   <meta name="description" content="A cozy hand-painted room starring Dog, a very fluffy cat with strong opinions.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="site-chrome/site-chrome.css">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="stage">
-    <header class="top">
+  <a class="cnd-skip" href="#main-content">Skip to Dog's Room</a>
+  <header class="cnd-header">
+    <div class="cnd-bar">
+      <a class="cnd-wordmark" href="https://catnamed.dog/" aria-label="catnamed.dog home">catnamed.dog</a>
+      <nav class="cnd-nav" aria-label="Main navigation">
+        <a class="cnd-link" href="https://catnamed.dog/#about">About</a>
+        <a class="cnd-link" href="https://catnamed.dog/dog/">Meet Dog</a>
+        <a class="cnd-link" href="https://studio.catnamed.dog/">Atelier</a>
+        <a class="cnd-pill" href="https://room.catnamed.dog/" aria-current="page">Dog's Room</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="stage" id="main-content" tabindex="-1">
+    <div class="top">
       <div>
+        <p class="eyebrow">A place of her own</p>
         <h1>Dog's <span>Room</span></h1>
         <p class="sub">A sunny afternoon with Dog</p>
       </div>
       <button id="music" class="music" type="button" aria-pressed="false">Music: off</button>
-    </header>
+    </div>
 
     <div class="screen-frame">
       <canvas id="room" class="screen" width="1920" height="1072" role="img"
@@ -43,7 +60,15 @@
     <p class="hint">Click things in the room too: the cat tree, her playpen, the sofa blanket, the laptop, the TV, her blue cube and the dining chair. Click Dog to pet her, but not too much.</p>
   </main>
 
-  <noscript><p class="hint">Dog's Room needs JavaScript. Everything runs locally; nothing is sent anywhere.</p></noscript>
+  <noscript><p class="hint noscript">Dog's Room needs JavaScript. Everything runs locally; nothing is sent anywhere.</p></noscript>
+
+  <footer class="cnd-footer">
+    <div class="cnd-footer-inner">
+      <a class="cnd-wordmark" href="https://catnamed.dog/">catnamed.dog</a>
+      <p>A personal home for Dog, AI curiosity, and small experiments.</p>
+      <span>Made by Daniel, for Dog.</span>
+    </div>
+  </footer>
 
   <script src="js/scene.js" defer></script>
   <script src="js/dog.js" defer></script>

@@ -3,8 +3,10 @@ MIT License
 Copyright (c) 2026 Daniel Nader
 
 This license covers the source code in this repository: index.html,
-styles.css and the files in the js folder. It does not cover the artwork,
-music or other files in the assets folder; see ASSETS-LICENSE.md.
+styles.css, the files in the js folder, and site-chrome/site-chrome.css
+and site-chrome/snippet.html. It does not cover the artwork, music or other
+files in the assets folder; see ASSETS-LICENSE.md. The Inter font in the
+site-chrome folder has its own license, in site-chrome/OFL.txt.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -6,6 +6,8 @@ It's a sunny afternoon. The TV is playing a singer with an oud, and Dog lives he
 
 **Play it:** https://room.catnamed.dog
 
+Part of [catnamed.dog](https://catnamed.dog), alongside [Meet Dog](https://catnamed.dog/dog/) and [Dog's Couture Atelier](https://studio.catnamed.dog). The header, footer, font and colors are shared with those pages.
+
 ## Play
 
 - **Click things in the room:** the cat tree, her playpen, the blanket on the sofa, the laptop, the TV, her blue cube house and the dining chair.
@@ -97,7 +99,8 @@ Plain HTML, CSS and JavaScript. No framework, no build step, no dependencies.
 | File | What it does |
 | --- | --- |
 | `index.html` | The page, the toy buttons and the music toggle |
-| `styles.css` | Layout, buttons and the paper texture |
+| `styles.css` | Layout, buttons and the paper texture, using the shared catnamed.dog colors |
+| `site-chrome/` | The header, footer, Inter font and colors shared by every catnamed.dog site. Keep it identical to the copy in the catnamed.dog repository. |
 | `js/scene.js` | The room painting, spots Dog can reach, props, particles and sunbeams |
 | `js/dog.js` | Draws Dog from her painted poses and adds breathing, walking, kneading and wiggles |
 | `js/game.js` | Dog's personality, the toys, petting and the music |
@@ -105,6 +108,7 @@ Plain HTML, CSS and JavaScript. No framework, no build step, no dependencies.
 | `assets/crayon-art.png` | The framed crayon drawing on the wall |
 | `assets/sprites/` | Dog's 22 poses and 8 toys and props |
 | `assets/audio/` | The soundtrack |
+| `favicon.svg` | The catnamed.dog tab icon |
 | `LICENSE` | MIT License for the code |
 | `ASSETS-LICENSE.md` | Rights notice for the artwork and music |
 | `CNAME` | Tells GitHub Pages to serve the site at room.catnamed.dog (do not delete) |
@@ -115,7 +119,7 @@ The scene is 1920 x 1072. Dog runs on a simple queue of steps (walk, pose, jump,
 
 - The repository and the website are both public.
 - GitHub Pages serves the site from the root of the `main` branch at https://room.catnamed.dog, with HTTPS enforced. The certificate renews automatically.
-- DNS lives at GoDaddy: a `room` CNAME record points to `dannyboi90.github.io`, and a TXT record verifies the domain with GitHub. The main catnamed.dog domain is separate and unaffected.
+- DNS lives at Cloudflare: a `room` CNAME record points to `dannyboi90.github.io`, set to DNS only (grey cloud). The main catnamed.dog site is hosted separately.
 - Every push to `main` goes live within a minute or two. There is no separate deploy step, so test locally first.
 - Everything in the repository, including its full history, is public. Never commit anything private; the `reference` folder stays excluded.
 - GitHub Pages is free for public repositories, so the site does not depend on a paid GitHub plan.
